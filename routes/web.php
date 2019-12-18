@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,6 +10,12 @@
 |
 */
 
+
+use App\Http\Controllers\HotelController;
+
 Route::get('/', function () {
     return view('welcome');
 });
+Route::resource('reservations','ReservationController');
+Route::get('index', 'HotelController@index')->name('index');
+Route::get('hotels','HotelController@hotels')->name('hotels');
